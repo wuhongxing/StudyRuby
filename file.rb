@@ -44,6 +44,7 @@ end
 Dir.chdir('./Log')
 # 读文件方式一：这种会将所有行读成一个数组，并且无需要 open/close
 # p File.readlines('log0.txt')
+p File.readlines('log0.txt')
 
 # 读文件方式二
 # file = File.open('log0.txt').each_line do |line|
@@ -52,11 +53,11 @@ Dir.chdir('./Log')
 # file.close
 
 # 读文件方式三
-file = File.open('log0.txt')
-while line = file.gets
-  p line
-end
-file.close
+# file = File.open('log0.txt')
+# while line = file.gets
+#   p line
+# end
+# file.close
 
 # (0...10).each do |index|
 #   file = File.new("log#{index}.txt", 'w')
