@@ -28,7 +28,52 @@ def copy_file()
   `cp test.txt ~/Desktop/package/dev/test-copy.txt`
 end
 
-copy_file
+# copy_file
 
 # File.delete('test-copy.txt')
 
+# 作业
+unless Dir.exist?('Log')
+  Dir.mkdir('Log')
+end
+
+# (0...10).each do |index|
+#   File.new
+# end
+
+Dir.chdir('./Log')
+# 读文件方式一：这种会将所有行读成一个数组，并且无需要 open/close
+# p File.readlines('log0.txt')
+
+# 读文件方式二
+# file = File.open('log0.txt').each_line do |line|
+#   p line
+# end
+# file.close
+
+# 读文件方式三
+file = File.open('log0.txt')
+while line = file.gets
+  p line
+end
+file.close
+
+# (0...10).each do |index|
+#   file = File.new("log#{index}.txt", 'w')
+#   file << "Hello world #{File.basename(file)}"
+# end
+
+# Dir.glob('*.txt').each do |log|
+#   p File.readlines(log)
+# end
+
+# Dir['log*.txt'].each do |log|
+#   # file = File.open(log, "r")
+#     # while line = file.gets
+#     #   p line
+#     # end
+#     # File.open(log, 'r').each_line do |line|
+#     #   p line
+#     # end
+#     p File.readlines(log)
+# end
