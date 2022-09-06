@@ -1,3 +1,12 @@
+def message(params)
+  p 'do something'
+  p params
+  yield if block_given?
+end
+message 'ppppppp' do
+  p 'do otherthings'
+end
+p '================='
 p 'using yield'
 def foo
   a = 2
